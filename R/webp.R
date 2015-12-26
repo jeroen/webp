@@ -15,7 +15,7 @@ webp_read <- function(buf) {
 
 #' @export
 #' @useDynLib webp R_webp_encode
-webp_write <- function(img, file = NULL, quality = 100) {
+webp_write <- function(img, file = NULL, quality = 80) {
   channels = dim(img)[1]
   stopifnot(channels == 3 || channels == 4)
   buf <- .Call(R_webp_encode, img, quality)
