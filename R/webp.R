@@ -4,18 +4,27 @@
 #'
 #' @export
 #' @useDynLib webp R_webp_decode
-webp_read <- function(buf) {
+webp_read <- function(buf, numeric = TRUE) {
   if(is.character(buf))
     buf <- readBin(buf[1], raw(), file.info(buf)$size)
   stopifnot(is.raw(buf))
   out <- .Call(R_webp_decode, buf)
-  class(out) <- c("rawimg", class(out))
+  if(isTRUE(numeric)){
+    out <- structure(as.numeric(out)/255, dim = dim(out))
+    out <- aperm(out)
+  } else {
+    class(out) <- c("rawimg", class(out))
+  }
   out
 }
 
 #' @export
 #' @useDynLib webp R_webp_encode
 webp_write <- function(img, file = NULL, quality = 80) {
+  if(is.numeric(img)){
+    img <- structure(as.raw(img * 255), dim = dim(img))
+    img <- aperm(img)
+  }
   channels = dim(img)[1]
   stopifnot(channels == 3 || channels == 4)
   buf <- .Call(R_webp_encode, img, quality)
