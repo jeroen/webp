@@ -8,3 +8,7 @@ Description: Read and write webp images into a 3 or 4 channel bitmap array.
     Output is compatible with the 'jpeg' and 'png' packages.
 License: MIT + file LICENSE
 LazyData: TRUE
+Suggests:
+    jpeg,
+    png
+RoxygenNote: 5.0.1

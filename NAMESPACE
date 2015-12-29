@@ -2,8 +2,8 @@
 
 S3method(print,rawimg)
 S3method(print,webp)
-export(webp_read)
-export(webp_write)
+export(read_webp)
+export(write_webp)
 useDynLib(webp,R_webp_decode)
 useDynLib(webp,R_webp_encode)
 useDynLib(webp,R_webp_get_info)

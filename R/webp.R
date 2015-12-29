@@ -4,7 +4,19 @@
 #'
 #' @export
 #' @useDynLib webp R_webp_decode
-webp_read <- function(buf, numeric = TRUE) {
+#' @examples # Convert to webp
+#' library(png)
+#' img <- readPNG(system.file("img", "Rlogo.png", package="png"))
+#' write_webp(img, "rlogo.webp")
+#' browseURL("rlogo.webp")
+#' rm(img)
+#'
+#' # Convert from webp
+#' library(jpeg)
+#' img <- read_webp("rlogo.webp")
+#' writeJPEG(img, "rlogo.jpeg")
+#' browseURL("rlogo.jpeg")
+read_webp <- function(buf, numeric = TRUE) {
   if(is.character(buf))
     buf <- readBin(buf[1], raw(), file.info(buf)$size)
   stopifnot(is.raw(buf))
@@ -20,7 +32,7 @@ webp_read <- function(buf, numeric = TRUE) {
 
 #' @export
 #' @useDynLib webp R_webp_encode
-webp_write <- function(img, file = NULL, quality = 80) {
+write_webp <- function(img, file = NULL, quality = 80) {
   if(is.numeric(img)){
     img <- structure(as.raw(img * 255), dim = dim(img))
     img <- aperm(img)
