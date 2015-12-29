@@ -2,12 +2,29 @@
 % Please edit documentation in R/webp.R
 \name{read_webp}
 \alias{read_webp}
+\alias{write_webp}
 \title{Webp image format}
 \usage{
-read_webp(buf, numeric = TRUE)
+read_webp(source, numeric = TRUE)
+
+write_webp(image, target = NULL, quality = 80)
+}
+\arguments{
+\item{source}{raw vector or path to webp file}
+
+\item{numeric}{convert the image to 0-1 real numbers to be compatible with
+images from the jpeg or png package.}
+
+\item{target}{path to a file or \code{NULL} to return the image as a raw vector}
+
+\item{quality}{value between 0 and 100}
+
+\item{numeric}{array of 3 dimensions (width * height * channel) with real numbers
+between 0 and 1.}
 }
 \description{
-Read and write webp images into a raw bitmap array.
+Read and write webp images into a bitmap array. The bitmap array uses the same
+conventions as the \code{png} and \code{jpeg} package.
 }
 \examples{
 # Convert to webp
