@@ -1,10 +1,10 @@
 Package: webp
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Title: Read and Write WEBP Images
+Version: 0.1
+Author: Jeroen Ooms
+Maintainer: Jeroen Ooms <jeroen.ooms@stat.ucla.edu>
+Description: Read and write webp images into a 3 or 4 channel bitmap array.
+    Output is compatible with the 'jpeg' and 'png' packages.
+License: MIT + file LICENSE
 LazyData: TRUE
-RoxygenNote: 5.0.1
