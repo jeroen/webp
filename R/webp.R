@@ -38,7 +38,7 @@ read_webp <- function(source, numeric = TRUE) {
 #' @export
 #' @rdname read_webp
 #' @useDynLib webp R_webp_encode
-#' @param numeric array of 3 dimensions (width * height * channel) with real numbers
+#' @param image array of 3 dimensions (width * height * channel) with real numbers
 #' between 0 and 1.
 #' @param target path to a file or \code{NULL} to return the image as a raw vector
 #' @param quality value between 0 and 100

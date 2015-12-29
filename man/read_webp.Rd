@@ -15,12 +15,12 @@ write_webp(image, target = NULL, quality = 80)
 \item{numeric}{convert the image to 0-1 real numbers to be compatible with
 images from the jpeg or png package.}
 
+\item{image}{array of 3 dimensions (width * height * channel) with real numbers
+between 0 and 1.}
+
 \item{target}{path to a file or \code{NULL} to return the image as a raw vector}
 
 \item{quality}{value between 0 and 100}
-
-\item{numeric}{array of 3 dimensions (width * height * channel) with real numbers
-between 0 and 1.}
 }
 \description{
 Read and write webp images into a bitmap array. The bitmap array uses the same
