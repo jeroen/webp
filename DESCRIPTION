@@ -10,7 +10,7 @@ Description: Lossless webp images are 26% smaller in size compared to PNG. Lossy
     conventions from the 'jpeg' and 'png' packages.
 License: MIT + file LICENSE
 URL: https://github.com/jeroenooms/webp
-    https://developers.google.com/speed/webp/?hl=en
+    https://developers.google.com/speed/webp
 BugReports: https://github.com/jeroenooms/webp/issues
 LazyData: TRUE
 Suggests:
