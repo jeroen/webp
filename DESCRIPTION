@@ -5,9 +5,9 @@ Version: 0.1
 Author: Jeroen Ooms
 Maintainer: Jeroen Ooms <jeroen.ooms@stat.ucla.edu>
 Description: Lossless webp images are 26% smaller in size compared to PNG. Lossy
-    webp images are 25-34% smaller in size compared to JPEG. This package can read
-    and write webp images into a 3 or 4 channel bitmap array (using conventions
-    from the 'jpeg' and 'png' packages).
+    webp images are 25-34% smaller in size compared to JPEG. This package reads
+    and writes webp images into a 3 (rgb) or 4 (rgba) channel bitmap array using
+    conventions from the 'jpeg' and 'png' packages.
 License: MIT + file LICENSE
 URL: https://github.com/jeroenooms/webp https://developers.google.com/speed/webp/?hl=en
 BugReports: https://github.com/jeroenooms/webp/issues
