@@ -1,7 +1,7 @@
 Package: webp
 Type: Package
 Title: A New Format for Lossless and Lossy Image Compression
-Version: 0.1
+Version: 0.2.9000
 Author: Jeroen Ooms
 Maintainer: Jeroen Ooms <jeroen.ooms@stat.ucla.edu>
 Description: Lossless webp images are 26% smaller in size compared to PNG. Lossy
@@ -12,6 +12,7 @@ License: MIT + file LICENSE
 URL: https://github.com/jeroenooms/webp
     https://developers.google.com/speed/webp
 BugReports: https://github.com/jeroenooms/webp/issues
+SystemRequirements: libwebp
 LazyData: TRUE
 Suggests:
     jpeg,
