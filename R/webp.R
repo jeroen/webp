@@ -6,6 +6,7 @@
 #' @export
 #' @useDynLib webp R_webp_decode
 #' @rdname read_webp
+#' @aliases webp
 #' @param source raw vector or path to webp file
 #' @param numeric convert the image to 0-1 real numbers to be compatible with
 #' images from the jpeg or png package.
