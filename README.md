@@ -58,7 +58,7 @@ sudo yum install epel-release
 sudo yum install libwebp-devel
 ```
 
-On __OS-X__ use [libwebp](https://github.com/Homebrew/homebrew-core/blob/master/Formula/webp.rb) from Homebrew:
+On __OS-X__ use [webp](https://github.com/Homebrew/homebrew-core/blob/master/Formula/webp.rb) from Homebrew:
 
 ```
 brew install webp
