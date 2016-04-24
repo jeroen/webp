@@ -39,7 +39,7 @@ Binary packages for __OS-X__ or __Windows__ can be installed directly from CRAN:
 install.packages("webp")
 ```
 
-Installation from source on Linux or OSX requires [`libwebp`](https://download.libwebp.org/doc/). On __Debian__ or __Ubuntu__ install [libwebp-dev](https://packages.debian.org/testing/libwebp-dev):
+Installation from source on Linux or OSX requires [`libwebp`](https://developers.google.com/speed/webp/). On __Debian__ or __Ubuntu__ install [libwebp-dev](https://packages.debian.org/testing/libwebp-dev):
 
 ```
 sudo apt-get install -y libwebp-dev
