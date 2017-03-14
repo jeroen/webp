@@ -3,15 +3,15 @@ Type: Package
 Title: A New Format for Lossless and Lossy Image Compression
 Version: 0.2.9000
 Author: Jeroen Ooms
-Maintainer: Jeroen Ooms <jeroen.ooms@stat.ucla.edu>
+Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
 Description: Lossless webp images are 26% smaller in size compared to PNG. Lossy
     webp images are 25-34% smaller in size compared to JPEG. This package reads
     and writes webp images into a 3 (rgb) or 4 (rgba) channel bitmap array using
     conventions from the 'jpeg' and 'png' packages.
 License: MIT + file LICENSE
-URL: https://github.com/jeroenooms/webp#readme
+URL: https://github.com/jeroen/webp#readme
     https://developers.google.com/speed/webp
-BugReports: https://github.com/jeroenooms/webp/issues
+BugReports: https://github.com/jeroen/webp/issues
 SystemRequirements: libwebp
 LazyData: TRUE
 Suggests:
