@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/jeroen/webp.svg?branch=master)](https://travis-ci.org/jeroen/webp)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jeroen/webp?branch=master&svg=true)](https://ci.appveyor.com/project/jeroen/webp)
 [![Coverage Status](https://codecov.io/github/jeroen/webp/coverage.svg?branch=master)](https://codecov.io/github/jeroen/webp?branch=master)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/webp)](http://cran.r-project.org/package=webp)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/webp)](http://cran.r-project.org/web/packages/webp/index.html)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/webp)](https://cran.r-project.org/package=webpp)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/webp)](https://cran.r-project.org/package=webp)
 [![Github Stars](https://img.shields.io/github/stars/jeroen/webp.svg?style=social&label=Github)](https://github.com/jeroen/webp)
 
 > Lossless webp images are 26% smaller in size compared to PNG. Lossy

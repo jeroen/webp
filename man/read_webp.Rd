@@ -41,4 +41,3 @@ img <- read_webp("rlogo.webp")
 writeJPEG(img, "rlogo.jpeg")
 browseURL("rlogo.jpeg")
 }
-
