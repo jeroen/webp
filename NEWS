@@ -1,0 +1,4 @@
+0.3
+  - Windows: update libwebp to v0.6.0
+  - Add symbol registration
+  - Extract autobrew from configure
