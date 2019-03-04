@@ -4,7 +4,6 @@ PKG_CPPFLAGS= -I$(RWINLIB)/include
 PKG_LIBS= -L$(RWINLIB)/lib${R_ARCH} -lwebp
 
 #all: clean
-all: $(SHLIB)
 $(OBJECTS): winlibs
 
 winlibs:
@@ -12,3 +11,5 @@ winlibs:
 
 clean:
 	rm -f $(SHLIB) $(OBJECTS)
+
+.PHONY: all clean winlibs
