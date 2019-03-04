@@ -1,39 +1,27 @@
 language: r
 cache: packages
+latex: false
+pandoc: false
+fortran: false
 
 matrix:
   include:
-    - os: linux
-      dist: precise
-      sudo: false
-    - os: linux
-      dist: trusty
-      env: R_CODECOV=true
-      sudo: required
+    - dist: precise
+    - dist: xenial
     - os: osx
-      osx_image: xcode8.1
       brew_packages: webp
-      latex: false
     - os: osx
-      osx_image: beta-xcode6.4
+      disable_homebrew: true
+    - os: osx
+      osx_image: xcode7.3
       disable_homebrew: true
 
 addons:
   apt:
     packages:
     - libwebp-dev
-    - valgrind
-
-r_github_packages:
-  - jimhester/covr
-
-warnings_are_errors: true
-#r_check_revdep: true
 
 notifications:
   email:
     on_success: change
     on_failure: change
-
-after_success:
-  - if [[ "${R_CODECOV}" ]]; then R -e 'covr::codecov()'; fi
