@@ -1,12 +1,14 @@
-PKG_CPPFLAGS= -I../windows/webp-0.6.0/include
-PKG_LIBS= -L../windows/webp-0.6.0/lib${R_ARCH} -lwebp
+VERSION = 1.0.2
+RWINLIB = ../windows/webp-$(VERSION)
+PKG_CPPFLAGS= -I$(RWINLIB)/include
+PKG_LIBS= -L$(RWINLIB)/lib${R_ARCH} -lwebp
 
 #all: clean
 all: $(SHLIB)
 $(OBJECTS): winlibs
 
 winlibs:
-	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/winlibs.R"
+	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/winlibs.R" $(VERSION)
 
 clean:
 	rm -f $(SHLIB) $(OBJECTS)
