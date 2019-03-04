@@ -2,7 +2,7 @@ PKG_CPPFLAGS= -I../windows/webp-0.6.0/include
 PKG_LIBS= -L../windows/webp-0.6.0/lib${R_ARCH} -lwebp
 
 #all: clean
-
+all: $(SHLIB)
 $(OBJECTS): winlibs
 
 winlibs:
