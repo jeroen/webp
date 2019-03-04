@@ -19,19 +19,20 @@ SEXP R_webp_decode(SEXP buf){
   if(!rgba)
     Rf_error("Failed to read buffer webp image");
   int picture = width * height * 4;
-  SEXP image = allocVector(RAWSXP, picture);
-  SEXP dim = allocVector(INTSXP, 3);
+  SEXP image = PROTECT(allocVector(RAWSXP, picture));
+  SEXP dim = PROTECT(allocVector(INTSXP, 3));
   INTEGER(dim)[0] = 4;
   INTEGER(dim)[1] = width;
   INTEGER(dim)[2] = height;
-  setAttrib(image, mkString("dim"), dim);
+  setAttrib(image, R_DimSymbol, dim);
   memcpy(RAW(image), rgba, picture);
   free(rgba);
+  UNPROTECT(2);
   return image;
 }
 
 SEXP R_webp_encode(SEXP img, SEXP quality){
-  int *dim = INTEGER(getAttrib(img, mkString("dim")));
+  int *dim = INTEGER(getAttrib(img, R_DimSymbol));
   int channel = dim[0];
   int width = dim[1];
   int height = dim[2];

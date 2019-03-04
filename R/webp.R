@@ -19,7 +19,7 @@
 #'
 #' # Convert from webp
 #' library(jpeg)
-#' img <- read_webp("rlogo.webp")
+#' img <- read_webp(out)
 #' jpeg <- file.path(tempdir(), "rlogo.jpeg")
 #' writeJPEG(img, jpeg)
 #' # browseURL(jpeg)
