@@ -31,13 +31,14 @@ conventions as the \code{png} and \code{jpeg} package.
 # Convert to webp
 library(png)
 img <- readPNG(system.file("img", "Rlogo.png", package="png"))
-write_webp(img, "rlogo.webp")
-browseURL("rlogo.webp")
-rm(img)
+out <- file.path(tempdir(), "rlogo.webp")
+write_webp(img, out)
+# browseURL(out)
 
 # Convert from webp
 library(jpeg)
 img <- read_webp("rlogo.webp")
-writeJPEG(img, "rlogo.jpeg")
-browseURL("rlogo.jpeg")
+jpeg <- file.path(tempdir(), "rlogo.jpeg")
+writeJPEG(img, jpeg)
+# browseURL(jpeg)
 }

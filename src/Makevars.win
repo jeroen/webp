@@ -1,7 +1,9 @@
 PKG_CPPFLAGS= -I../windows/webp-0.6.0/include
 PKG_LIBS= -L../windows/webp-0.6.0/lib${R_ARCH} -lwebp
 
-all: clean winlibs
+#all: clean
+
+$(OBJECTS): winlibs
 
 winlibs:
 	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/winlibs.R"
