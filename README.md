@@ -1,6 +1,6 @@
 # webp
 
-##### *A New Format for Lossless and Lossy Image Compression*
+> A New Format for Lossless and Lossy Image Compression
 
 [![Build Status](https://travis-ci.org/jeroen/webp.svg?branch=master)](https://travis-ci.org/jeroen/webp)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jeroen/webp?branch=master&svg=true)](https://ci.appveyor.com/project/jeroen/webp)
@@ -8,10 +8,10 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/webp)](https://cran.r-project.org/package=webp)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/webp)](https://cran.r-project.org/package=webp)
 
-> Lossless webp images are 26% smaller in size compared to PNG. Lossy
-  webp images are 25-34% smaller in size compared to JPEG. This package reads
-  and writes webp images into a 3 (rgb) or 4 (rgba) channel bitmap array using
-  conventions from the 'jpeg' and 'png' packages.
+Lossless webp images are 26% smaller in size compared to PNG. Lossy
+webp images are 25-34% smaller in size compared to JPEG. This package reads
+and writes webp images into a 3 (rgb) or 4 (rgba) channel bitmap array using
+conventions from the 'jpeg' and 'png' packages.
 
 ## Hello World
 
