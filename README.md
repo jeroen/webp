@@ -2,7 +2,6 @@
 
 > A New Format for Lossless and Lossy Image Compression
 
-[![Build Status](https://travis-ci.org/jeroen/webp.svg?branch=master)](https://travis-ci.org/jeroen/webp)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/jeroen/webp?branch=master&svg=true)](https://ci.appveyor.com/project/jeroen/webp)
 [![Coverage Status](https://codecov.io/github/jeroen/webp/coverage.svg?branch=master)](https://codecov.io/github/jeroen/webp?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/webp)](https://cran.r-project.org/package=webp)
