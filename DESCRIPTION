@@ -13,7 +13,6 @@ URL: https://github.com/jeroen/webp
     https://developers.google.com/speed/webp
 BugReports: https://github.com/jeroen/webp/issues
 SystemRequirements: libwebp
-LazyData: TRUE
 Encoding: UTF-8
 Suggests:
     jpeg,
