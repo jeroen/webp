@@ -51,6 +51,9 @@ write_webp <- function(image, target = NULL, quality = 80) {
     image <- aperm(image)
   }
   channels = dim(image)[1]
+  quality <- as.integer(quality)
+  if(!is.na(quality))
+    stopifnot("quality must be between 0 and 100" = quality > -1 && quality < 101)
   stopifnot(channels == 3 || channels == 4)
   buf <- .Call(R_webp_encode, image, quality)
   if(is.character(target))

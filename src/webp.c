@@ -40,11 +40,11 @@ SEXP R_webp_encode(SEXP img, SEXP quality){
   uint8_t *buf;
   size_t len;
   if(channel == 3){
-    len = ISNA(qual) ?
+    len = (qual == NA_INTEGER) ?
       WebPEncodeLosslessRGB(RAW(img), width, height, width * channel, &buf) :
       WebPEncodeRGB(RAW(img), width, height, width * channel, qual, &buf);
   } else {
-    len = ISNA(qual) ?
+    len = (qual == NA_INTEGER) ?
       WebPEncodeLosslessRGBA(RAW(img), width, height, width * channel, &buf) :
       WebPEncodeRGBA(RAW(img), width, height, width * channel, qual, &buf);
   }
