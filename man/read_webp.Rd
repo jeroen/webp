@@ -21,7 +21,8 @@ between 0 and 1.}
 
 \item{target}{path to a file or \code{NULL} to return the image as a raw vector}
 
-\item{quality}{value between 0 and 100}
+\item{quality}{value between 0 and 100 for lossy compression, or \code{NA} for
+lossless compression.}
 }
 \description{
 Read and write webp images into a bitmap array. The bitmap array uses the same

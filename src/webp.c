@@ -33,15 +33,20 @@ SEXP R_webp_decode(SEXP buf){
 
 SEXP R_webp_encode(SEXP img, SEXP quality){
   int *dim = INTEGER(getAttrib(img, R_DimSymbol));
+  int qual = asInteger(quality);
   int channel = dim[0];
   int width = dim[1];
   int height = dim[2];
   uint8_t *buf;
   size_t len;
   if(channel == 3){
-    len = WebPEncodeRGB(RAW(img), width, height, width * channel, asInteger(quality), &buf);
+    len = ISNA(qual) ?
+      WebPEncodeLosslessRGB(RAW(img), width, height, width * channel, &buf) :
+      WebPEncodeRGB(RAW(img), width, height, width * channel, qual, &buf);
   } else {
-    len = WebPEncodeRGBA(RAW(img), width, height, width * channel, asInteger(quality), &buf);
+    len = ISNA(qual) ?
+      WebPEncodeLosslessRGBA(RAW(img), width, height, width * channel, &buf) :
+      WebPEncodeRGBA(RAW(img), width, height, width * channel, qual, &buf);
   }
   SEXP out = allocVector(RAWSXP, len);
   memcpy(RAW(out), buf, len);

@@ -1,3 +1,6 @@
+1.1
+  - Setting quality = NA in write_webp() now uses losless compression
+
 1.0:
   - Windows / Mac: update to libwebp 1.0
   - Fix some rchk errors
