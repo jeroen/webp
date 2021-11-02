@@ -1,5 +1,5 @@
 1.1
-  - Setting quality = NA in write_webp() now uses losless compression
+  - Setting quality = NA in write_webp() now uses lossless encoding
 
 1.0:
   - Windows / Mac: update to libwebp 1.0
