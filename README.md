@@ -43,13 +43,13 @@ Installation from source on Linux or OSX requires [`libwebp`](https://developers
 sudo apt-get install -y libwebp-dev
 ```
 
-On __Fedora__ we need [libwebp-devel](https://apps.fedoraproject.org/packages/libwebp-devel):
+On __Fedora__ we need [libwebp-devel](https://src.fedoraproject.org/rpms/libwebp):
 
 ```
 sudo yum install libwebp-devel
 ````
 
-On __CentOS / RHEL__ we install [libwebp-devel](https://apps.fedoraproject.org/packages/libwebp-devel) via EPEL:
+On __CentOS / RHEL__ we install [libwebp-devel](https://src.fedoraproject.org/rpms/libwebp) via EPEL:
 
 ```
 sudo yum install epel-release
