@@ -5,11 +5,14 @@
 #'
 #' @export
 #' @useDynLib webp R_webp_decode
+#' @useDynLib webp R_webp_decode_nativeraster
 #' @rdname read_webp
 #' @aliases webp
 #' @param source raw vector or path to webp file
 #' @param numeric convert the image to 0-1 real numbers to be compatible with
 #' images from the jpeg or png package.
+#' @param native logical. Return the image in nativeRaster format. Default: FALSE.
+#' Note: this option over-rides the \code{numeric} argument.
 #' @examples # Convert to webp
 #' library(png)
 #' img <- readPNG(system.file("img", "Rlogo.png", package="png"))
@@ -23,16 +26,22 @@
 #' jpeg <- file.path(tempdir(), "rlogo.jpeg")
 #' writeJPEG(img, jpeg)
 #' # browseURL(jpeg)
-read_webp <- function(source, numeric = TRUE) {
+read_webp <- function(source, numeric = TRUE, native = FALSE) {
   if(is.character(source))
     source <- readBin(source[1], raw(), file.info(source)$size)
   stopifnot(is.raw(source))
-  out <- .Call(R_webp_decode, source)
-  if(isTRUE(numeric)){
-    out <- structure(as.numeric(out)/255, dim = dim(out))
-    out <- aperm(out)
+  if (isTRUE(native)) {
+    out <- .Call(R_webp_decode_nativeraster, source)
+    attr(out, 'channels') <- 4L
+    class(out) <- 'nativeRaster'
   } else {
-    class(out) <- c("rawimg", class(out))
+    out <- .Call(R_webp_decode, source)
+    if (isTRUE(numeric)){
+      out <- structure(as.numeric(out)/255, dim = dim(out))
+      out <- aperm(out)
+    } else {
+      class(out) <- c("rawimg", class(out))
+    }
   }
   out
 }
@@ -40,22 +49,31 @@ read_webp <- function(source, numeric = TRUE) {
 #' @export
 #' @rdname read_webp
 #' @useDynLib webp R_webp_encode
+#' @useDynLib webp R_webp_encode_nativeraster
 #' @param image array of 3 dimensions (width * height * channel) with real numbers
 #' between 0 and 1.
 #' @param target path to a file or \code{NULL} to return the image as a raw vector
 #' @param quality value between 0 and 100 for lossy compression, or \code{NA} for
 #' lossless compression.
 write_webp <- function(image, target = NULL, quality = 80) {
-  if(is.numeric(image)){
-    image <- structure(as.raw(image * 255), dim = dim(image))
-    image <- aperm(image)
-  }
-  channels = dim(image)[1]
+
   quality <- as.integer(quality)
   if(!is.na(quality))
     stopifnot("quality must be between 0 and 100" = quality > -1 && quality < 101)
-  stopifnot(channels == 3 || channels == 4)
-  buf <- .Call(R_webp_encode, image, quality)
+
+  if (is.integer(image) && inherits(image, "nativeRaster")) {
+    buf <- .Call(R_webp_encode_nativeraster, image, quality)
+  } else {
+    if(is.numeric(image)){
+      image <- structure(as.raw(image * 255), dim = dim(image))
+      image <- aperm(image)
+    }
+    channels = dim(image)[1]
+    stopifnot(channels == 3 || channels == 4)
+
+    buf <- .Call(R_webp_encode, image, quality)
+  }
+
   if(is.character(target))
     writeBin(buf, target)
   else
