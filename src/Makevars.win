@@ -1,14 +1,13 @@
-VERSION = 1.0.2
-RWINLIB = ../windows/webp-$(VERSION)
+RWINLIB = ../windows/libwebp
 PKG_CPPFLAGS= -I$(RWINLIB)/include
-PKG_LIBS= -L$(RWINLIB)/lib${R_ARCH} -lwebp
+PKG_LIBS= -L$(RWINLIB)/lib${R_ARCH} -L$(RWINLIB)/lib -lwebp -lsharpyuv
 
 #all: clean
 all: $(SHLIB)
 $(OBJECTS): winlibs
 
 winlibs:
-	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/winlibs.R" $(VERSION)
+	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/winlibs.R"
 
 clean:
 	rm -f $(SHLIB) $(OBJECTS)

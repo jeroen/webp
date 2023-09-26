@@ -1,3 +1,6 @@
+1.2.0
+  - Windows: update libs
+
 1.1
   - Setting quality = NA in write_webp() now uses lossless encoding
 
