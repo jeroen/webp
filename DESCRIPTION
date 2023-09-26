@@ -1,6 +1,6 @@
 Package: webp
 Type: Package
-Title: A New Format for Lossless and Lossy Image Compression <https://developers.google.com/speed/webp>
+Title: A New Format for Lossless and Lossy Image Compression
 Version: 1.2.0
 Author: Jeroen Ooms
 Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
