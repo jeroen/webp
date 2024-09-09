@@ -3,7 +3,7 @@ Type: Package
 Title: A New Format for Lossless and Lossy Image Compression
 Version: 1.2.0
 Author: Jeroen Ooms
-Maintainer: Jeroen Ooms <jeroen@berkeley.edu>
+Maintainer: Jeroen Ooms <jeroenooms@gmail.com>
 Description: Lossless webp images are 26% smaller in size compared to PNG. Lossy
     webp images are 25-34% smaller in size compared to JPEG. This package reads
     and writes webp images into a 3 (rgb) or 4 (rgba) channel bitmap array using
