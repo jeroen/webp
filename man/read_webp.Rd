@@ -6,7 +6,7 @@
 \alias{write_webp}
 \title{Webp image format}
 \usage{
-read_webp(source, numeric = TRUE)
+read_webp(source, numeric = TRUE, native = FALSE)
 
 write_webp(image, target = NULL, quality = 80)
 }
@@ -15,6 +15,9 @@ write_webp(image, target = NULL, quality = 80)
 
 \item{numeric}{convert the image to 0-1 real numbers to be compatible with
 images from the jpeg or png package.}
+
+\item{native}{logical. Return the image in nativeRaster format. Default: FALSE.
+Note: this option over-rides the \code{numeric} argument.}
 
 \item{image}{array of 3 dimensions (width * height * channel) with real numbers
 between 0 and 1.}
