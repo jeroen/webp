@@ -62,4 +62,3 @@ On __OS-X__ use [webp](https://github.com/Homebrew/homebrew-core/blob/master/For
 brew install webp
 ```
 
-
