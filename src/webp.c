@@ -26,7 +26,7 @@ SEXP R_webp_decode(SEXP buf){
   INTEGER(dim)[2] = height;
   setAttrib(image, R_DimSymbol, dim);
   memcpy(RAW(image), rgba, picture);
-  free(rgba);
+  WebPFree(rgba);
   UNPROTECT(2);
   return image;
 }
@@ -37,7 +37,7 @@ SEXP R_webp_encode(SEXP img, SEXP quality){
   int channel = dim[0];
   int width = dim[1];
   int height = dim[2];
-  uint8_t *buf;
+  uint8_t *buf = NULL;
   size_t len;
   if(channel == 3){
     len = (qual == NA_INTEGER) ?
@@ -50,6 +50,6 @@ SEXP R_webp_encode(SEXP img, SEXP quality){
   }
   SEXP out = allocVector(RAWSXP, len);
   memcpy(RAW(out), buf, len);
-  free(buf);
+  WebPFree(buf);
   return out;
 }
