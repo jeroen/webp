@@ -1,0 +1,11 @@
+name: Test R-universe workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Check
+    uses: r-universe-org/workflows/.github/workflows/build.yml@v3
